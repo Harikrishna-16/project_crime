@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lower Official Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('static/ll.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .main_div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .lower_official {
+            width: 50vw;
+            background-color: rgba(91, 88, 88, 0.9);
+            border-radius: 5vw;
+            padding: 2vw;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .lower_official:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+        }
+        h1 {
+            font-size: 2.5vw;
+            text-align: center;
+        }
+        h4 {
+            text-align: center;
+        }
+        form {
+            font-size: 1.5vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, button {
+            width: 80%;
+            margin: 1vw 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        input {
+            background-color: #333;
+            color: white;
+        }
+        input:hover, input:focus {
+            background-color: #555;
+            color: white;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_div">  
+        <div style="text-align: center;">
+            {{msg}}
+        </div>   
+        <div class="lower_official">
+            <h1 class="lower_official_title">Lower Official Login</h1>
+            <form action="/lower_login" method="post">
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id" placeholder="Enter ID" required /><br><br>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required /><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

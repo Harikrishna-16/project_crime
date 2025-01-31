@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: url('static/a.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 3vw;
+            margin-bottom: 5vh;
+            transition: color 0.3s, transform 0.3s;
+        }
+        h1:hover {
+            color: #ace308;
+            transform: scale(1.1);
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        button {
+            width: 15vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: rgba(91, 88, 88, 0.9);
+            color: white;
+            font-weight: bold;
+            font-size: 1.5vw;
+            border-radius: 10vw;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, color 0.3s, font-size 0.3s;
+            text-align: center;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: width 0.3s, height 0.3s;
+            z-index: 0;
+        }
+        button:hover::before {
+            width: 400%;
+            height: 400%;
+        }
+        button:hover {
+            background-color: rgba(70, 70, 70, 0.9);
+            transform: scale(1.05);
+            color: #0b0808;
+            font-size: 1.7vw;
+        }
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Case Management System</h1>
+    <div class="button-container">
+        <button onclick="window.location.href='/viewhipro'"><span>View profile</span></button>
+        <button onclick="window.location.href='/view'"><span>View case</span></button>
+        <button onclick="window.location.href='/add_case'"><span>Add new case</span></button>
+        <button onclick="window.location.href='/edit_case'"><span>Edit case</span></button>
+        <button onclick="window.location.href='/removecase'"><span>Remove case</span></button>
+        <button onclick="window.location.href='/reghio'"><span>Register new higher official</span></button>
+        <button onclick="window.location.href='/regloo'"><span>Register new lower official</span></button>
+        <button onclick="window.location.href='/remhio'"><span>Remove higher official</span></button>
+        <button onclick="window.location.href='/remloo'"><span>Remove lower official</span></button>
+        <button onclick="window.location.href='/hio_changepasss'"><span>Change password</span></button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Higher Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('static/rlo.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .remove {
+            width: 30vw;
+            background-color: rgba(91, 88, 88, 0.9);
+            margin: 10vw auto;
+            border-radius: 15px;
+            padding: 5vw;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .remove:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+        }
+        input, button {
+            width: 80%;
+            margin: 2vw 10%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input:hover, input:focus {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="remove">
+        <h1 style="text-align:center">Remove Lower Profile</h1>
+        <h4 style="text-align:center">{{msg}}</h4>
+        <form action="/remloo" method="post">
+            <input type="text" name="eid" placeholder="Enter the higher ID" required>
+            <input type="text" name="reid" placeholder="Re-enter the higher ID" required>
+            <button type="submit">Remove</button>
+        </form>   
+    </div>     
+</body>
+</html>

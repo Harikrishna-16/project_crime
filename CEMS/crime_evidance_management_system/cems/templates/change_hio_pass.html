@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: url('static/hpass.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .password {
+            width: 30vw;
+            background-color: rgba(60, 60, 60, 0.9);
+            border-radius: 15px;
+            padding: 3vw;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            position: relative;
+        }
+        .input-container {
+            position: relative;
+            width: 80%;
+            margin-top: 1.5vw;
+        }
+        input {
+            width: 100%;
+            padding: 1vw;
+            border: none;
+            border-radius: 10px;
+            font-size: 1vw;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        input:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        button {
+            width: 80%;
+            margin-top: 1.5vw;
+            padding: 1vw;
+            border: none;
+            border-radius: 10px;
+            font-size: 1vw;
+            background-color: #008CBA;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #005f6b;
+            transform: scale(1.05);
+        }
+        h1 {
+            color: #FFD700;
+            margin-bottom: 2vw;
+            font-size: 2.5vw;
+            transition: transform 0.3s, color 0.3s;
+        }
+        h1:hover {
+            transform: scale(1.1);
+            color: #ff9800;
+        }
+    </style>
+    <script>
+        function togglePasswordVisibility(id) {
+            var passwordField = document.getElementById(id);
+            var icon = document.getElementById(id + '-icon');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.textContent = '🔒'; // Change to lock icon when visible
+            } else {
+                passwordField.type = 'password';
+                icon.textContent = '🔓'; // Change to unlock icon when hidden
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="password">
+        <h1>Change Password</h1>
+        <form action="/hio_changepasss" method="post">
+            <div class="input-container">
+                <input type="password" id="op" name="op" placeholder="Enter old password">
+                <span class="toggle-password" id="op-icon" onclick="togglePasswordVisibility('op')">🔓</span>
+            </div>
+            <div class="input-container">
+                <input type="password" id="np" name="np" placeholder="Enter new password">
+                <span class="toggle-password" id="np-icon" onclick="togglePasswordVisibility('np')">🔓</span>
+            </div>
+            <button type="submit">Change Password</button>
+        </form>
+    </div>
+</body>
+</html>
