@@ -7,68 +7,71 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 20px;
-            background: url('static/addcase.jpg') no-repeat center center fixed; 
-            background-size: cover;
-            color: white;
+            margin: 0;
+            padding: 20px;
+            background-color:#1a1a2e;
+                        color: #333;
         }
         .container {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+        h1:hover {
+            color: #007BFF;
         }
         .detail {
             margin-bottom: 20px;
             padding: 15px;
-            border: 1px solid #555;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: #f9f9f9;
         }
         .label {
             font-weight: bold;
             margin-bottom: 5px;
+            display: block;
         }
         .file-preview {
             margin-top: 10px;
-            border: 1px solid #555;
+            border: 1px solid #ddd;
             padding: 10px;
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: #f1f1f1;
             max-height: 200px;
             overflow-y: auto;
         }
         button {
-            margin-top: 10px;
-            padding: 8px 15px;
-            background-color: #4CAF50;
+            padding: 10px 15px;
+            background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
+            margin-top: 10px;
         }
         button:hover {
-            background-color: #0c410b;
+            background-color: #0056b3;
             transform: scale(1.05);
         }
         .remove-btn {
-            background-color: #f44336;
-        }
-        .remove-btn:hover {
-            background-color: #2d38b5;
-            transform: scale(1.05);
-        }
-        form {
-            background-color: rgba(91, 88, 88, 0.9);
-            padding: 2vw 3vw 2vw 3vw;
-            border-radius: 2vw;
-        }
-        h1 {
-            color: #FFD700;
-        }
-        input[type="text"] {
-            width: 100%;
+    background-color: #dc3545; /* Base Color */
+}
+.remove-btn:hover {
+    background-color: #c82333; /* Hover Color */
+}
+        input[type="text"], input[type="file"] {
+            width: calc(100% - 16px);
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -148,7 +151,7 @@
         <h1>Enter Case Details</h1>
         <form method="POST" action="/add_case" enctype="multipart/form-data">
             <label for="case_number">Case Number:</label>
-            <input type="text" id="case_number" name="case_number" required><br><br>
+            <input type="text" id="case_number" name="case_number" required>
 
             <div id="detailsContainer">
                 <div class="detail">
@@ -169,7 +172,7 @@
                 </div>
             </div>
 
-            <button type="button" onclick="addDetail()">Add Detail</button><br><br>
+            <button type="button" onclick="addDetail()">Add Details</button>
             <button type="submit">Submit</button>
         </form>
     </div>
